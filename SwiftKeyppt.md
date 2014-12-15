@@ -39,7 +39,7 @@ system.time(backoff("Nice to"))
 
 ```
    user  system elapsed 
-   0.01    0.00    0.02 
+   0.02    0.00    0.01 
 ```
 
 ```r
@@ -52,6 +52,8 @@ system.time(weighted("Nice to"))
    0.08    0.00    0.08 
 ```
 Since the model does not need to evaluate every model, it takes very little time to give a prediction. 
+
+Because of this speed, this app can perform **real time prediction**.
 
 
 Accuracy & size

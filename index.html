@@ -787,26 +787,26 @@ hljs.initHighlightingOnLoad();
 <h1>SwiftKey Project</h1><p>Fred Zheng Zhenhao<br/>2014&#x2F;12&#x2F;10</p>
 
 <div class="slideContent" >
-<p><small> This powerpoint is an explanatory document for the Shiny App,
-please fo to this page for real experience. 
-<a href="https://fredzheng.shinyapps.io/Swiftkey/">https://fredzheng.shinyapps.io/Swiftkey/</a>
-</small></p>
+<p><font  color="blue"><b>Remark: please follow this link for real experience. </b></font></p>
+
+<p><a href="http://fredzheng.shinyapps.io/Swiftkey/">http://fredzheng.shinyapps.io/Swiftkey/</a></p>
+
+<p>Or  please delete the &ldquo;s&rdquo; from &ldquo;https&rdquo; in my submission, I am sorry for the trouble caused.</p>
 
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Current situation</h3>
+<h3>Backoff Model</h3>
 <div class="slideContent" >
-<p>A lot of text input apps nowaday is already very advanced. They predict the next word in a very short time. </p>
+<p>This backoff model takes following steps:</p>
 
-<p>One of the well known text input apps is TouchPal.It is nice to use. But it takes more than 20M to download.</p>
-
-<p>Some simple input methods are small in size, but with limited predictability.</p>
-
-<p><strong><em>UltraWord Beta</em></strong> uses a sophisticated algorithm that makes the app small in size and easy to use.</p>
-
-<p>Target at people who has an low-end phone, seeking for a portable input methods which doesn&#39;t stuck. </p>
+<ol>
+<li>Look up the prediction in <strong>Trigram model</strong></li>
+<li>If no match is found, look up the <strong>bigram model</strong> for prediction</li>
+<li>If still no match is found, look up the <strong>unigram model</strong></li>
+<li>If again no match is found, use the <strong>most frequent words</strong> as prediction</li>
+</ol>
 
 </div>
 
@@ -815,19 +815,19 @@ please fo to this page for real experience.
 <h3>Advantages -- Time</h3>
 <div class="slideContent" >
 <pre><code class="r">## What we use -- backoff model
-system.time(backoff(&quot;Nice to see&quot;)) 
+system.time(backoff(&quot;Nice to&quot;)) 
 </code></pre>
 
 <pre><code>   user  system elapsed 
-   0.01    0.00    0.01 
+   0.01    0.00    0.02 
 </code></pre>
 
 <pre><code class="r">## Combination of 1,2,3-gram
-system.time(weighted(&quot;Nice to see&quot;))
+system.time(weighted(&quot;Nice to&quot;))
 </code></pre>
 
 <pre><code>   user  system elapsed 
-   0.05    0.00    0.05 
+   0.08    0.00    0.07 
 </code></pre>
 
 <p>Our backoff model takes far less time than combined n-gram model. What&#39;s more, it only takes 1.66M to download (core part). </p>

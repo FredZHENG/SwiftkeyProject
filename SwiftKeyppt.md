@@ -3,23 +3,20 @@ SwiftKey Project
 author: Fred Zheng Zhenhao
 date: 2014/12/10
 font-family: 'Helvetica'
-<small> This powerpoint is an explanatory document for the Shiny App,
-please fo to this page for real experience. 
-https://fredzheng.shinyapps.io/Swiftkey/
-</small>
+<font  color="blue"><b>Remark: please follow this link for real experience. </b></font>
 
-Current situation
+http://fredzheng.shinyapps.io/Swiftkey/
+
+Or  please delete the "s" from "https" in my submission, I am sorry for the trouble caused.
+
+Backoff Model
 ========================================================
 
-A lot of text input apps nowaday is already very advanced. They predict the next word in a very short time. 
-
-One of the well known text input apps is TouchPal.It is nice to use. But it takes more than 20M to download.
-
-Some simple input methods are small in size, but with limited predictability.
-
-**_UltraWord Beta_** uses a sophisticated algorithm that makes the app small in size and easy to use.
-
-Target at people who has an low-end phone, seeking for a portable input methods which doesn't stuck. 
+This backoff model takes following steps:
+  1. Look up the prediction in **Trigram model**
+  2. If no match is found, look up the **bigram model** for prediction
+  3. If still no match is found, look up the **unigram model**
+  4. If again no match is found, use the **most frequent words** as prediction
 
 Advantages -- Time
 ========================================================
@@ -29,29 +26,28 @@ Advantages -- Time
 
 ```r
 ## What we use -- backoff model
-system.time(backoff("Nice to see")) 
+system.time(backoff("Nice to")) 
 ```
 
 ```
    user  system elapsed 
-   0.01    0.00    0.01 
+   0.01    0.00    0.02 
 ```
 
 ```r
 ## Combination of 1,2,3-gram
-system.time(weighted("Nice to see"))
+system.time(weighted("Nice to"))
 ```
 
 ```
    user  system elapsed 
-   0.05    0.00    0.05 
+   0.08    0.00    0.07 
 ```
 Our backoff model takes far less time than combined n-gram model. What's more, it only takes 1.66M to download (core part). 
 
 
 Accuracy & options
 ========================================================
-
 
 It's too bad that the accuracy of one prediction is only 11.5%. 
 

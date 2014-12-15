@@ -9,6 +9,12 @@ http://fredzheng.shinyapps.io/Swiftkey/
 
 Or  please delete the "s" from "https" in my submission, I am sorry for the trouble caused.</i>
 
+Interface
+========================================================
+Screenshot
+<img src="screenshot.png" />
+
+
 Backoff Model
 ========================================================
 
@@ -18,7 +24,7 @@ This backoff model takes following steps:
   3. If still no match is found, look up the **unigram model**
   4. If again no match is found, use the **most frequent words** as prediction
 
-Since the model does not need to evaluate every model, it takes very little time to give a prediction.
+
 
 Advantages -- Time
 ========================================================
@@ -45,35 +51,18 @@ system.time(backoff("Nice to"))
 ## Combination of 1,2,3-gram
 system.time(weighted("Nice to"))
 ```
-Our backoff model takes far less time than combined n-gram model. What's more, it only takes 1.66M to download (core part). 
+Since the model does not need to evaluate every model, it takes very little time to give a prediction.
 
 
-Accuracy & options
+Accuracy & size
 ========================================================
 
 We tested accuracy in a test set with 786 entries, and the accuracy of one prediction is 11.5%. 
 
 However, if we allow 2 predictions, the accuracy will increase to 14.4%, and if we allow 5 predictions, the accuracy will be 23.2%.
 
-Additionaly, it provides two options for users to choose from:
-  
-  1. **Number of predictions:**  
-  This sliderbar allows users to see more than one predictions from which users can choose from.
-  
-  2. **Only show one word:**  
-  If users allow this algorithm to predict phrases, it can do so at the beginning of the sentence. 
+What's more, it only takes 1.66M to download (core part). 
 
-Further improvement
-========================================================
-We think further development can be made in following area:
+<i>Again, please follow this link to see the app, many thanks (http://fredzheng.shinyapps.io/Swiftkey/)</i>
 
-  1. **Adaptive algorithm**  
-  It's totally possible to collect the text typed by users and integrate them into the input document-term matrix
-  
-  2. **Accuracy**  
-  This accuracy is not so high, but it already performs well in predicting common phrases like "I'll be there", "I can't wait to" etc.
-  
-  3. **App-specific**  
-  Since people have different behavior, if we build seperate predictive algorithms, the accuracy should be higher
-  
   

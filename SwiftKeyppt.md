@@ -3,7 +3,7 @@ SwiftKey Project
 author: Fred Zheng Zhenhao
 date: 2014/12/10
 font-family: 'Helvetica'
-<font  color="blue"><i>Remark:</i></font> <i>please follow this link for experience.
+<font  color="blue"><i>Remark:</i></font> <i>please follow this link for shinyapp.
 
 http://fredzheng.shinyapps.io/Swiftkey/
 
@@ -39,7 +39,7 @@ system.time(backoff("Nice to"))
 
 ```
    user  system elapsed 
-   0.00    0.02    0.01 
+   0.03    0.00    0.03 
 ```
 
 ```r
@@ -49,7 +49,7 @@ system.time(weighted("Nice to"))
 
 ```
    user  system elapsed 
-   0.07    0.00    0.08 
+   0.08    0.00    0.08 
 ```
 Since the model does not need to evaluate every model, it takes very little time to give a prediction.
 

@@ -3,11 +3,11 @@ SwiftKey Project
 author: Fred Zheng Zhenhao
 date: 2014/12/10
 font-family: 'Helvetica'
-<font  color="blue"><b>Remark: please follow this link for real experience. </b></font>
+<font  color="blue"><i>Remark:</i></font> <i>please follow this link for experience.
 
 http://fredzheng.shinyapps.io/Swiftkey/
 
-Or  please delete the "s" from "https" in my submission, I am sorry for the trouble caused.
+Or  please delete the "s" from "https" in my submission, I am sorry for the trouble caused.</i>
 
 Backoff Model
 ========================================================
@@ -17,6 +17,8 @@ This backoff model takes following steps:
   2. If no match is found, look up the **bigram model** for prediction
   3. If still no match is found, look up the **unigram model**
   4. If again no match is found, use the **most frequent words** as prediction
+
+Since the model does not need to evaluate every model, it takes very little time to give a prediction.
 
 Advantages -- Time
 ========================================================
@@ -49,7 +51,7 @@ Our backoff model takes far less time than combined n-gram model. What's more, i
 Accuracy & options
 ========================================================
 
-It's too bad that the accuracy of one prediction is only 11.5%. 
+We tested accuracy in a test set with 786 entries, and the accuracy of one prediction is 11.5%. 
 
 However, if we allow 2 predictions, the accuracy will increase to 14.4%, and if we allow 5 predictions, the accuracy will be 23.2%.
 

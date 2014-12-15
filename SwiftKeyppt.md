@@ -49,11 +49,11 @@ system.time(weighted("Nice to"))
 
 ```
    user  system elapsed 
-   0.08    0.00    0.08 
+   0.07    0.00    0.08 
 ```
 Since the model does not need to evaluate every model, it takes very little time to give a prediction. 
 
-Because of this speed, this app can perform **real time prediction**.
+Due to the speed, this app can make **real time prediction**.
 
 
 Accuracy & size

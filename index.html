@@ -830,7 +830,7 @@ system.time(backoff(&quot;Nice to&quot;))
 </code></pre>
 
 <pre><code>   user  system elapsed 
-   0.01    0.00    0.02 
+   0.02    0.00    0.01 
 </code></pre>
 
 <pre><code class="r">## Combination of 1,2,3-gram
@@ -842,6 +842,8 @@ system.time(weighted(&quot;Nice to&quot;))
 </code></pre>
 
 <p>Since the model does not need to evaluate every model, it takes very little time to give a prediction. </p>
+
+<p>Because of this speed, this app can perform <strong>real time prediction</strong>.</p>
 
 </div>
 

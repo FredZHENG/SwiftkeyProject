@@ -3,7 +3,7 @@ SwiftKey Project
 author: Fred Zheng Zhenhao
 date: 2014/12/10
 font-family: 'Helvetica'
-<font  color="blue"><i>Remark:</i></font> <i>please follow this link for shinyapp.
+<font  color="yellow"><i>Remark:</i></font> <i>please follow this link for shinyapp.
 
 http://fredzheng.shinyapps.io/Swiftkey/
 
@@ -24,7 +24,7 @@ This backoff model takes following steps:
   3. If still no match is found, look up the **unigram model**
   4. If again no match is found, use the **most frequent words** as prediction
 
-
+I also coded a weghted algorithm to compare the accuracy -- see next slide
 
 Advantages -- Time
 ========================================================
@@ -51,17 +51,17 @@ system.time(backoff("Nice to"))
 ## Combination of 1,2,3-gram
 system.time(weighted("Nice to"))
 ```
-Since the model does not need to evaluate every model, it takes very little time to give a prediction.
+Since the model does not need to evaluate every model, it takes very little time to give a prediction. 
 
 
 Accuracy & size
 ========================================================
 
-We tested accuracy in a test set with 786 entries, and the accuracy of one prediction is 11.5%. 
+We tested accuracy in a test set with 786 entries, and the accuracy of one prediction is **11.5%**. 
 
-However, if we allow 2 predictions, the accuracy will increase to 14.4%, and if we allow 5 predictions, the accuracy will be 23.2%.
+However, if we allow 2 predictions, the accuracy will increase to **14.4%**, and if we allow 5 predictions, the accuracy will be **23.2%**.
 
-What's more, it only takes 1.66M to download (core part). 
+What's more, it only takes **1.66M** to download (core part). 
 
 <i>Again, please follow this link to see the app, many thanks (http://fredzheng.shinyapps.io/Swiftkey/)</i>
 
